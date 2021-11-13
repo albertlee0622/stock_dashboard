@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# Author: Albert Lee  
+# Illinois Netid: albertl8  
+# Title: Stock Price Dashboard  
+
 # In[1]:
 
 
@@ -140,7 +144,8 @@ fig.update_layout(xaxis1_rangeslider_visible=True,
                   xaxis2_rangeslider_visible=True, 
 )
 fig.update_xaxes(rangeslider_thickness = 0.05)
-
+fig.layout.annotations[0].update(x=0.025)
+fig.layout.annotations[1].update(x=0.025)
 fig.update_layout(
     autosize=True,
 #     width=1000,
@@ -156,13 +161,12 @@ fig.update_layout(
     yaxis2_title='USD',
 )
 
-fig.layout.annotations[0].update(x=0.025)
-fig.layout.annotations[1].update(x=0.025)
+
 
 # fig.show()
 
 
-# In[ ]:
+# In[9]:
 
 
 import plotly.graph_objects as go # or plotly.express as px
@@ -185,7 +189,7 @@ app.layout = html.Div([ html.H1('Stock Price Dashboard', style={'textAlign': 'ce
                         ],)
 ])
 
-app.run_server(debug=False, use_reloader=True)  # Turn off reloader if inside Jupyter
+app.run_server(debug=False, use_reloader=False)
 
 
 # In[ ]:
